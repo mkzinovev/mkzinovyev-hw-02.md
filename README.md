@@ -150,6 +150,10 @@ Hostname=Zabbix server
 ```bash
 systemctl enable --now zabbix-agent
 ```
+
+### Проверка логов агента 
+<img width="1660" height="498" alt="image" src="https://github.com/user-attachments/assets/e72b2e59-b382-42b7-8946-b19dc3874047" />
+
 ### 2. Установка Zabbix Agent на Windows
 
 Файл:
@@ -166,56 +170,17 @@ Hostname=windows-pc
 
 Путь: Configuration → Hosts
 
-
 ### Добавлены хосты:
 
 Zabbix server
 windows-pc
-![]()
+![](Zabbix-hosts.PNG)
 ### Интерфейс:
 
-Type: Agent
-
-Port: 10050
-
 ### Назначены шаблоны:
-
-Linux by Zabbix agent
-
-Windows by Zabbix agent
-
-
-
-
-### Настройка агента
-sudo nano /etc/zabbix/zabbix_agentd.conf
-
-Server=<IP_ZABBIX_SERVER>
-ServerActive=<IP_ZABBIX_SERVER>
-Hostname=<UNIQUE_HOSTNAME>
-
-Запуск агента
-sudo systemctl enable --now zabbix-agent
-sudo systemctl restart zabbix-agent
-
-Проверка логов
-sudo journalctl -u zabbix-agent -n 50 --no-pager
-
-Добавление хостов в Zabbix Web
-
-Configuration → Hosts → Create host
-
-Interface: Agent (IP, порт 10050)
-
-Template: Linux by Zabbix agent
-
-Проверка доступности агента:
-
 ```bash
-sudo dnf install -y zabbix-get
-zabbix_get -s 127.0.0.1 -k agent.ping
-zabbix_get -s 127.0.0.1 -k agent.hostname
-
+Linux by Zabbix agent
+Windows by Zabbix agent
 ```
 
 
