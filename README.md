@@ -164,17 +164,14 @@ Hostname=windows-pc
 ![](Zabbix-agent-wd.PNG)
 ### 3. Добавление хостов в Zabbix Web
 
-Путь:
-
-Configuration → Hosts
+Путь: Configuration → Hosts
 
 
 ### Добавлены хосты:
 
 Zabbix server
-
 windows-pc
-
+![]()
 ### Интерфейс:
 
 Type: Agent
