@@ -114,11 +114,24 @@ systemctl status httpd --no-pager
 ### Админка Zabbix
 ![Zabbix админка](adminka.png)
 
+На Red OS включён SELinux, поэтому для работы веб-интерфейса Zabbix
+с PostgreSQL было разрешено сетевое подключение Apache к БД:
+
+```bash
+sudo setsebool -P httpd_can_network_connect_db on
+
 
 ---
 
 ### Задание 2
 
+**> На Red OS 7.3 доступен PostgreSQL 12.x, а Zabbix 6.4 требует PostgreSQL >= 13.  
+> Для выполнения учебного задания включена опция `AllowUnsupportedDBVersions=1`.**
+sudo nano /etc/zabbix/zabbix_server.conf
+# добавлено:
+# AllowUnsupportedDBVersions=1
+
+sudo systemctl restart zabbix-server
 
 
 Настройка агента
@@ -142,6 +155,17 @@ Configuration → Hosts → Create host
 Interface: Agent (IP, порт 10050)
 
 Template: Linux by Zabbix agent
+
+Проверка доступности агента:
+
+```bash
+sudo dnf install -y zabbix-get
+zabbix_get -s 127.0.0.1 -k agent.ping
+zabbix_get -s 127.0.0.1 -k agent.hostname
+
+```
+
+
 
 ```
 Поле для вставки кода...
