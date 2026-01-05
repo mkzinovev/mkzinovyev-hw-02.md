@@ -161,7 +161,7 @@ Hostname=windows-pc
 ```
 
 ### Перезапуск службы Zabbix Agent.
-![](Zabbix-agent-WD.PNG)
+![](Zabbix-agent-wd.PNG)
 ### 3. Добавление хостов в Zabbix Web
 
 Путь:
