@@ -23,7 +23,7 @@ sudo systemctl enable --now postgresql
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Админка Zabbix](https://github.com/mkzinovev/mkzinovyev-hw-02.md/blob/main/adminka.png)
+![Zabbix админка](adminka.png)
 
 
 ---
