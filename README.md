@@ -145,7 +145,7 @@ sudo systemctl restart zabbix-server
 ```bash
 dnf install -y zabbix-agent
 ```
-Файл: /etc/zabbix/zabbix_agentd.conf
+### Файл: /etc/zabbix/zabbix_agentd.conf
 
 ```bash
 Server=127.0.0.1
@@ -161,8 +161,8 @@ systemctl enable --now zabbix-agent
 
 ### 2. Установка Zabbix Agent на Windows
 
-Файл:
-C:\Program Files\Zabbix Agent\zabbix_agentd.conf
+### Файл:C:\Program Files\Zabbix Agent\zabbix_agentd.conf
+
 ```cmd
 Server=192.168.56.10,192.168.0.0/24
 ServerActive=192.168.56.10
@@ -173,12 +173,13 @@ Hostname=windows-pc
 ![](Zabbix-agent-wd.PNG)
 ### 3. Добавление хостов в Zabbix Web
 
-Путь: Configuration --> Hosts
+### Путь: Configuration --> Hosts
 
 ### Добавлены хосты:
-
+```bash
 Zabbix server
 windows-pc
+```
 ![](Zabbix-hosts.PNG)
 
 ### Назначены шаблоны:
