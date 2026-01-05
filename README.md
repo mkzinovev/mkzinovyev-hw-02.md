@@ -23,8 +23,7 @@ sudo systemctl enable --now postgresql
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Админка Zabbix]`
-<img width="2044" height="1120" alt="image" src="https://github.com/user-attachments/assets/69870e7e-082f-4d0b-97d5-52c80e1720be" />
+![Админка Zabbix](https://github.com/mkzinovev/mkzinovyev-hw-02.md/blob/main/adminka.png)`
 
 
 ---
@@ -49,7 +48,7 @@ sudo systemctl enable --now postgresql
 ```
 
 `При необходимости прикрепитe сюда скриншоты
-![Название скриншота 2](ссылка на скриншот 2)`
+
 
 
 ---
