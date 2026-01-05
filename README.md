@@ -134,14 +134,63 @@ sudo systemctl restart zabbix-server
 
 ---
 
-## Задание 2
+## Задание 2. Установка и подключение Zabbix Agent на два хоста
 
-**> На Red OS 7.3 доступен PostgreSQL 12.x, а Zabbix 6.4 требует PostgreSQL >= 13.  
-> Для выполнения учебного задания включена опция `AllowUnsupportedDBVersions=1`.**
+### 1. Установка Zabbix Agent на сервер (Red OS)
+```bash
+dnf install -y zabbix-agent
+```
+Файл: /etc/zabbix/zabbix_agentd.conf
+
+```bash
+Server=127.0.0.1
+ServerActive=127.0.0.1
+Hostname=Zabbix server
+```
+```bash
+systemctl enable --now zabbix-agent
+```
+### 2. Установка Zabbix Agent на Windows
+
+Файл:
+C:\Program Files\Zabbix Agent\zabbix_agentd.conf
+```cmd
+Server=192.168.56.10,192.168.0.0/24
+ServerActive=192.168.56.10
+Hostname=windows-pc
+```
+
+### Перезапуск службы Zabbix Agent.
+![](Zabbix-agent-WD.PNG)
+### 3. Добавление хостов в Zabbix Web
+
+Путь:
+
+Configuration → Hosts
+
+
+### Добавлены хосты:
+
+Zabbix server
+
+windows-pc
+
+### Интерфейс:
+
+Type: Agent
+
+Port: 10050
+
+### Назначены шаблоны:
+
+Linux by Zabbix agent
+
+Windows by Zabbix agent
 
 
 
-Настройка агента
+
+### Настройка агента
 sudo nano /etc/zabbix/zabbix_agentd.conf
 
 Server=<IP_ZABBIX_SERVER>
