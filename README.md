@@ -112,7 +112,7 @@ systemctl status httpd --no-pager
 ```
 
 ### Админка Zabbix
-![Zabbix админка](adminka.png)
+![Zabbix админка](adminka-1.png)
 
 На Red OS включён SELinux, поэтому для работы веб-интерфейса Zabbix
 с PostgreSQL было разрешено сетевое подключение Apache к БД:
